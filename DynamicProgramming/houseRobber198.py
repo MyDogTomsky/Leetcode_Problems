@@ -19,7 +19,6 @@ def efficient_robbery(house_map):
     return dp[n]
 
 start_clock = time.time()
-end_clock = time.time()
 
 map1 = [1,2,3,1]
 map2 = [2,7,9,3,1]
@@ -32,4 +31,5 @@ for map in housing_map:
     print(f'\nAfter researching all the houses,\nCurrent the value of each house is {map}')
     print(f'\t\t\tSo, we are gonna robber the selected way, total amount will be {result}\n')    
 
+end_clock = time.time()
 print(f'\n\n{end_clock - start_clock:.4f} seconds has consumed!')

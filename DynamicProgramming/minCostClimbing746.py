@@ -13,6 +13,17 @@ def minSum_toFinal(given_stair):
 
     return dp[n]
 
+
+def min_totalCost(stair_info):
+
+    m = len(stair_info)
+    dp = [0] * (m+1)
+
+    for stair in range(2,m+1):
+        dp[stair] = min(dp[stair-1]+stair_info[stair-1],dp[stair-2]+stair_info[stair-2])
+
+    return dp[m]    
+
 departure = time.time()
 
 all_cases = []
@@ -27,7 +38,10 @@ for case in all_cases:
     result = minSum_toFinal(case)
     print(f'\nThis case ==> {case} costs {result}!!!\n')
 
-
+print('\n====================== New:(review)\n\n')
+for case in all_cases:
+    result2 = min_totalCost(case)
+    print(f'\nThis case ==> {case} costs {result2}!!!\n')
 
 arrival = time.time()
 

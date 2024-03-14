@@ -1,0 +1,6 @@
+TO DO REVIEW!
+
+# climbingstairs 70
+# minCostClimbing 746
+# hoseRobber 198
+# deleteEarn 740

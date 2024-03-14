@@ -20,6 +20,19 @@ def finding_ways(total_step):
     return total_case[n-1]
     
 
+
+def finding_second(stairs):
+    m = stairs
+    dp = [0] * (m+1)
+    dp[0] = 0
+    dp[1] = 1
+    dp[2] = 2
+    for stair in range(3,m+1):
+        dp[stair] = dp[stair - 1] + dp[stair - 2]
+
+    return dp[m]    
+
+
 start_time = time.time()
 
 step2 = 2
@@ -32,6 +45,14 @@ outcome2 = finding_ways(step3)
 print(f'\nThe second case has {step3} steps, and the possible ways climbing up are {outcome2}...\n')
 outcome3 = finding_ways(step44)
 print(f'\nThe third case has {step44} steps, and the possible ways climbing up are {outcome3}...\n')
+
+print('\n============================= New way(Review):\n')
+outcome11 = finding_second(step2)
+print(f'\nThe first case has {step2} steps, and the possible ways climbing up are {outcome11}...\n')
+outcome22 = finding_second(step3)
+print(f'\nThe second case has {step3} steps, and the possible ways climbing up are {outcome22}...\n')
+outcome33 = finding_second(step44)
+print(f'\nThe third case has {step44} steps, and the possible ways climbing up are {outcome33}...\n')
 
 end_time = time.time()
 print(f'\n\n{end_time - start_time:.4f} SEC has consumed!')
