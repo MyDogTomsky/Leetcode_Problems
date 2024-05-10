@@ -23,8 +23,8 @@ class pathSumthree437_2:
             if not each_node:
                 return 0
             current_sum += each_node.val
-            available = cumulative[current_sum-target_num]
             cumulative[current_sum] +=1
+            available = cumulative[current_sum-target_num]
             result = available + dfs(each_node.left,current_sum) + dfs(each_node.right,current_sum)
             cumulative[current_sum] -= 1
             return result
